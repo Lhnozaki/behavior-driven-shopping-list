@@ -10,4 +10,9 @@ describe("ShoppingListItem", function() {
     let milk = new ShoppingListItem("milk");
     milk.name.should.equal("milk");
   });
+
+  it("Should have property named 'description'", function() {
+    let wholeMilk = new ShoppingListItem("milk, wholeMilk");
+    wholeMilk.description.should.equal("wholeMilk");
+  });
 });
