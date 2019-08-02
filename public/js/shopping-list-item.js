@@ -1,7 +1,11 @@
 class ShoppingListItem {
-  constructor(name, description, isDone) {
+  constructor(name, description) {
     this.name = name;
     this.description = description;
     this.isDone = false;
+  }
+
+  check() {
+    this.isDone = true;
   }
 }

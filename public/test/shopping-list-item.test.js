@@ -26,4 +26,17 @@ describe("ShoppingListItem", function() {
     eggs.name.should.equal("eggs");
     eggs.description.should.equal("Cage free");
   });
+
+  describe(".check", function() {
+    it("Should be a function", function() {
+      let chicken = new ShoppingListItem("chicken", "Organic");
+      expect(chicken.check).to.be.a("function");
+    });
+
+    it("Should have a method named 'check' that will set isDone property to 'True'", function() {
+      let chicken = new ShoppingListItem("chicken", "Organic");
+      chicken.check();
+      expect(chicken.isDone).to.equal(true);
+    });
+  });
 });
