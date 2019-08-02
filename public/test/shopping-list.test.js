@@ -5,4 +5,9 @@ describe("ShoppingList", function() {
   it("Should be a class", function() {
     expect(ShoppingList).to.be.a("function");
   });
+
+  it("Should have a property named 'items'", function() {
+    let cart = new ShoppingList();
+    expect(cart.items).to.eql([]);
+  });
 });
