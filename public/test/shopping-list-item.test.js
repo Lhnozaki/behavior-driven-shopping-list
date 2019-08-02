@@ -52,4 +52,17 @@ describe("ShoppingListItem", function() {
       expect(cheese.isDone).to.equal(false);
     });
   });
+
+  describe(".render", function() {
+    it("should be a function", function() {
+      let beef = new ShoppingListItem("beef", "t-bone");
+      expect(beef.render).to.be.a("function");
+    });
+
+    it("Should construct and return an html formatted string", function() {
+      let beef = new ShoppingListItem("beef", "t-bone");
+      beef.render();
+      expect(beef.render()).to.be.a("string");
+    });
+  });
 });
