@@ -12,12 +12,18 @@ describe("ShoppingListItem", function() {
   });
 
   it("Should have property named 'description'", function() {
-    let wholeMilk = new ShoppingListItem("milk", "wholeMilk");
-    wholeMilk.description.should.equal("wholeMilk");
+    let wholeMilk = new ShoppingListItem("milk", "Whole milk");
+    wholeMilk.description.should.equal("Whole milk");
   });
 
   it("Should have a property named 'isDone'", function() {
-    let completed = new ShoppingListItem("milk", "wholeMilk", true);
-    completed.description.should.equal(true);
+    let completed = new ShoppingListItem("milk", "Whole milk", "completed");
+    completed.isDone.should.equal(false);
+  });
+
+  it("Should have a constructor method that accepts 2 arguments, 'name' and 'description'", function() {
+    let eggs = new ShoppingListItem("eggs", "Cage free");
+    eggs.name.should.equal("eggs");
+    eggs.description.should.equal("Cage free");
   });
 });
