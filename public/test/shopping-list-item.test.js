@@ -12,7 +12,12 @@ describe("ShoppingListItem", function() {
   });
 
   it("Should have property named 'description'", function() {
-    let wholeMilk = new ShoppingListItem("milk, wholeMilk");
+    let wholeMilk = new ShoppingListItem("milk", "wholeMilk");
     wholeMilk.description.should.equal("wholeMilk");
+  });
+
+  it("Should have a property named 'isDone'", function() {
+    let completed = new ShoppingListItem("milk", "wholeMilk", true);
+    completed.description.should.equal(true);
   });
 });
