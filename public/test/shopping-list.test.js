@@ -10,4 +10,18 @@ describe("ShoppingList", function() {
     let cart = new ShoppingList();
     expect(cart.items).to.eql([]);
   });
+
+  describe(".addItem", function() {
+    it("Should have a method named addItem that accepts a single ShoppingListItem argument", function() {
+      let cart = new ShoppingList();
+      expect(cart.addItem).to.be.a("function");
+    });
+
+    it("should place an item into the cart", function() {
+      let cart = new ShoppingList();
+      let poke = new ShoppingListItem("poke", "Spicy ahi");
+      cart.addItem(poke);
+      expect(cart.items).to.eql([poke]);
+    });
+  });
 });
