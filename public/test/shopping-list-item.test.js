@@ -39,4 +39,17 @@ describe("ShoppingListItem", function() {
       expect(chicken.isDone).to.equal(true);
     });
   });
+
+  describe(".uncheck", function() {
+    it("Should be a function", function() {
+      let cheese = new ShoppingListItem("cheese", "Mozzarella");
+      expect(cheese.uncheck).to.be.a("function");
+    });
+
+    it('Should have a method named "uncheck" that will set isDone propefrty to "false"', function() {
+      let cheese = new ShoppingListItem("cheese", "Mozzarella");
+      cheese.uncheck();
+      expect(cheese.isDone).to.equal(false);
+    });
+  });
 });
