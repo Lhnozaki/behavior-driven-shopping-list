@@ -3,7 +3,11 @@ class ShoppingList {
     this.items = [];
   }
 
-  addItem(shoppingListItem) {
-    this.items.push(shoppingListItem);
+  addItem(item) {
+    if (!item instanceof ShoppingListItem) {
+      return error;
+    } else {
+      this.items.push(item);
+    }
   }
 }

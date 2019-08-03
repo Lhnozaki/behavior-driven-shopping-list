@@ -23,5 +23,10 @@ describe("ShoppingList", function() {
       cart.addItem(poke);
       expect(cart.items).to.eql([poke]);
     });
+
+    it("should throw an error if it's not a ShoppingListItem object", function() {
+      let cart = new ShoppingList();
+      expect(cart.addItem.bind(ShoppingListItem, "cookies")).to.throw(Error);
+    });
   });
 });
