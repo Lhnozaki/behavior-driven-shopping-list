@@ -51,5 +51,53 @@ describe("ShoppingList", function() {
       expect(cart.items).to.contain(rice);
       expect(cart.items).to.not.contain(steak);
     });
+
+    it("Should remove the last item in the shopping list when no argument is passed in the parameter", function() {
+      let cart = new ShoppingList();
+      let poke = new ShoppingListItem("poke", "Spicy Ahi");
+      let steak = new ShoppingListItem("steak", "Rib Eye");
+      let rice = new ShoppingListItem("rice", "white rice");
+      cart.addItem(poke);
+      cart.addItem(steak);
+      cart.addItem(rice);
+      cart.removeItem();
+
+      expect(cart.items).to.contain(poke);
+      expect(cart.items).to.contain(steak);
+      expect(cart.items).to.not.contain(rice);
+    });
+
+    it("Should throw an error if it's not a ShoppingListItem object", function() {
+      let cart = new ShoppingList();
+      let poke = new ShoppingListItem("poke", "Spicy Ahi");
+      let steak = new ShoppingListItem("steak", "Rib Eye");
+      let rice = new ShoppingListItem("rice", "white rice");
+      cart.addItem(poke);
+      cart.addItem(steak);
+      cart.addItem(rice);
+      expect(cart.items).to.contain(poke);
+      expect(cart.items).to.contain(steak);
+      expect(cart.items).to.contain(rice);
+      expect(cart.removeItem.bind(ShoppingListItem, "rice")).to.throw();
+    });
+  });
+
+  describe(".render", function() {
+    it("Should be a function", function() {
+      let cart = new ShoppingList();
+      expect(cart.render).to.be.a("function");
+    });
+
+    it("should concatenate the result, wrap in <ul> tags, and return html formatted string", function() {
+      let cart = new ShoppingList();
+      let poke = new ShoppingListItem("poke", "Spicy Ahi");
+      let steak = new ShoppingListItem("steak", "Rib Eye");
+      let rice = new ShoppingListItem("rice", "white rice");
+      cart.addItem(poke);
+      cart.addItem(steak);
+      cart.addItem(rice);
+      cart.render();
+      expect(cart.render()).to.be.a("string");
+    });
   });
 });
