@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  background: linear-gradient(to bottom right, #2b47ac, black); }
+  body #flexContainer {
+    background: #f7f7f7;
+    margin: 30px auto;
+    max-width: 700px;
+    height: 700px;
+    padding: 0px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    overflow: auto; }
+    body #flexContainer .form-wrap {
+      padding: 30px 100px; }
+      body #flexContainer .form-wrap h2 {
+        text-align: center; }
+      body #flexContainer .form-wrap input:hover {
+        border: 1px solid #344a72; }
+      body #flexContainer .form-wrap button {
+        background: #2196f3;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+        color: white; }
+        body #flexContainer .form-wrap button:active {
+          background: #176cb1; }
+      body #flexContainer .form-wrap .chkContainer {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 30px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none; }
+        body #flexContainer .form-wrap .chkContainer input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0; }
+        body #flexContainer .form-wrap .chkContainer #checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 25px;
+          width: 25px;
+          background-color: aqua; }
+        body #flexContainer .form-wrap .chkContainer input:checked ~ #checkmark {
+          background-color: #ccc; }
+    @media only screen and (max-width: 675px) {
+      body #flexContainer .form-wrap {
+        padding: 30px; } }
