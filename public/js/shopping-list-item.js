@@ -14,8 +14,7 @@ class ShoppingListItem {
   }
 
   render() {
-    return `<li class="completed_${this.isDone}"><span>${
-      this.name
-    }</span> <span>${this.description}</span></li>`;
+    return `<td>${this.name}</td>
+    <td>${this.description}</td>`;
   }
 }

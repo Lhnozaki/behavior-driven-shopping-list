@@ -30,10 +30,19 @@ class ShoppingList {
   }
 
   render() {
-    let tag = "<ul>";
+    let checkboxTag = `<td>
+<label class="chkContainer">
+  <input type="checkbox" checked="checked" />
+  <span id="checkmark"></span>
+</label>
+</td>`;
+    let tag = "<tr>";
     this.items.forEach(function(e) {
+      tag += checkboxTag;
       tag += e.render();
+      tag += "</tr>";
     });
-    return (tag += "</ul>");
+
+    return tag;
   }
 }
